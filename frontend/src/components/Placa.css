@@ -1,0 +1,106 @@
+/*
+  Tudo em "em": o font-size da .placa é a altura dos caracteres,
+  e o resto (faixa, borda, BR) escala junto. Proporção real 400 × 130 mm.
+*/
+.placa {
+  --placa-fs: 22px;
+  font-size: var(--placa-fs);
+  display: inline-flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 4.6em;
+  aspect-ratio: 40 / 13;
+  overflow: hidden;
+  border: max(1px, 0.05em) solid #1b1d22;
+  border-radius: 0.13em;
+  background: #fff;
+  color: #14161a;
+  box-shadow:
+    inset 0 0 0 max(1px, 0.03em) #fff,
+    0 0.03em 0.08em rgba(20, 28, 46, 0.25);
+  vertical-align: middle;
+  user-select: none;
+}
+
+.placa__faixa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 25%;
+  padding: 0 0.13em;
+  background: var(--mercosul);
+  color: #fff;
+}
+
+.placa__emblema,
+.placa__bandeira {
+  height: 66%;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.placa__pais {
+  font: 600 0.21em/1 var(--fonte-placa);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  padding-left: 0.32em; /* compensa o letter-spacing da última letra */
+}
+
+.placa__corpo {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placa__br {
+  position: absolute;
+  top: 0.16em;
+  left: 0.14em;
+  font: 700 0.2em/1 var(--fonte-placa);
+  letter-spacing: 0.02em;
+}
+
+.placa__caracteres {
+  font: 600 1em/1 var(--fonte-placa);
+  letter-spacing: 0.075em;
+  padding-left: 0.2em;
+  margin-top: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.placa--vazia .placa__caracteres {
+  color: #c4c9d2;
+}
+
+/* Tamanhos */
+.placa--marca {
+  --placa-fs: 15px;
+}
+.placa--p {
+  --placa-fs: 14px;
+}
+.placa--m {
+  --placa-fs: 30px;
+}
+.placa--g {
+  --placa-fs: 44px;
+}
+.placa--hero {
+  --placa-fs: clamp(46px, 8vw, 88px);
+  box-shadow:
+    inset 0 0 0 max(1px, 0.03em) #fff,
+    0 0.04em 0 rgba(20, 28, 46, 0.18),
+    0 0.3em 0.6em -0.15em rgba(20, 28, 46, 0.25);
+}
+
+/* Em tamanhos pequenos o emblema e a bandeira viram ruído: some com eles */
+.placa--marca .placa__emblema,
+.placa--marca .placa__bandeira,
+.placa--p .placa__emblema,
+.placa--p .placa__bandeira,
+.placa--marca .placa__br,
+.placa--p .placa__br {
+  visibility: hidden;
+}

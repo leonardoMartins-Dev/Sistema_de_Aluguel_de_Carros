@@ -1,0 +1,306 @@
+/* =========================================================
+   Tokens
+   Papel de documento oficial + azul da faixa da placa Mercosul
+   + tintas de carimbo para os status do pedido.
+   ========================================================= */
+:root {
+  --papel: #eef1f5;
+  --folha: #ffffff;
+  --tinta: #141c2e;
+  --tinta-2: #4a5468;
+  --tinta-3: #6e778a;
+  --linha: #d8dde6;
+  --linha-forte: #b9c1cf;
+
+  --mercosul: #0e3a8a;
+  --mercosul-escuro: #0a2c6b;
+  --mercosul-claro: #e4eaf6;
+
+  /* Tintas de carimbo (uma por status) */
+  --c-analise: #a3620a;
+  --c-aprovado: #1c7a4a;
+  --c-reprovado: #be2430;
+  --c-contratado: #5a2d8f;
+  --c-cancelado: #6a7180;
+
+  --fonte-placa: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --fonte-texto: 'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --fonte-dados: 'Atkinson Hyperlegible Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --raio: 4px;
+  --sombra-folha: 0 1px 0 rgba(20, 28, 46, 0.04), 0 1px 3px rgba(20, 28, 46, 0.06);
+  --largura: 1120px;
+  --gutter: 32px;
+
+  color-scheme: light;
+  font: 400 16px/1.5 var(--fonte-texto);
+  color: var(--tinta);
+  background: var(--papel);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 16px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--papel);
+}
+
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--mercosul);
+  text-underline-offset: 0.18em;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--mercosul);
+  outline-offset: 2px;
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================================================
+   Página
+   ========================================================= */
+.pagina {
+  width: 100%;
+  max-width: calc(var(--largura) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding: 40px var(--gutter) 96px;
+}
+
+.cabecalho-pagina {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px 24px;
+  margin-bottom: 32px;
+}
+
+.cabecalho-pagina__titulo {
+  font: 600 46px/0.95 var(--fonte-placa);
+  letter-spacing: -0.01em;
+}
+
+.cabecalho-pagina__descricao {
+  margin-top: 10px;
+  max-width: 60ch;
+  color: var(--tinta-2);
+}
+
+@media (max-width: 720px) {
+  .pagina {
+    padding-top: 28px;
+  }
+  .cabecalho-pagina__titulo {
+    font-size: 36px;
+  }
+}
+
+/* Dados: protocolo, datas, valores */
+.dado {
+  font-family: var(--fonte-dados);
+  font-size: 0.94em;
+  letter-spacing: -0.01em;
+}
+
+.rotulo {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tinta-3);
+}
+
+/* =========================================================
+   Botões
+   ========================================================= */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: var(--raio);
+  font: 700 15px/1.2 var(--fonte-texto);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+
+.botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.botao--primario {
+  background: var(--mercosul);
+  color: #fff;
+}
+.botao--primario:hover:not(:disabled) {
+  background: var(--mercosul-escuro);
+}
+
+.botao--secundario {
+  background: var(--folha);
+  border-color: var(--linha-forte);
+  color: var(--tinta);
+}
+.botao--secundario:hover:not(:disabled) {
+  border-color: var(--tinta-2);
+}
+
+.botao--aprovar {
+  background: var(--c-aprovado);
+  color: #fff;
+}
+.botao--aprovar:hover:not(:disabled) {
+  background: #155f39;
+}
+
+.botao--reprovar,
+.botao--perigo {
+  background: var(--folha);
+  border-color: currentColor;
+  color: var(--c-reprovado);
+}
+.botao--reprovar:hover:not(:disabled),
+.botao--perigo:hover:not(:disabled) {
+  background: #fbeeee;
+}
+
+.botao--perigo-cheio {
+  background: var(--c-reprovado);
+  color: #fff;
+}
+.botao--perigo-cheio:hover:not(:disabled) {
+  background: #9c1c26;
+}
+
+.botao--texto {
+  min-height: 0;
+  padding: 4px 2px;
+  background: none;
+  color: var(--mercosul);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.botao--compacto {
+  min-height: 36px;
+  padding: 6px 14px;
+  font-size: 14px;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* =========================================================
+   Avisos
+   ========================================================= */
+.aviso {
+  padding: 12px 14px;
+  border-radius: var(--raio);
+  border-left: 4px solid var(--c-reprovado);
+  background: #fbeeee;
+  color: #7d1820;
+  font-size: 15px;
+}
+
+.aviso--info {
+  border-left-color: var(--mercosul);
+  background: var(--mercosul-claro);
+  color: var(--mercosul-escuro);
+}
+
+.carregando {
+  padding: 48px 0;
+  color: var(--tinta-3);
+}
+
+/* Estado vazio: convite para agir */
+.vazio {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+  padding: 40px;
+  border: 1px dashed var(--linha-forte);
+  border-radius: var(--raio);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.vazio__titulo {
+  font: 600 26px/1.1 var(--fonte-placa);
+}
+
+.vazio p {
+  max-width: 52ch;
+  color: var(--tinta-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
