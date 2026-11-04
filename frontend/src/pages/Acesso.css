@@ -1,0 +1,130 @@
+/* Login: apresentação à esquerda (papel), formulário à direita (folha) */
+.acesso {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(400px, 0.8fr);
+  min-height: 100svh;
+}
+
+.acesso__apresentacao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 28px;
+  padding: clamp(40px, 7vw, 104px);
+}
+
+.acesso__titulo {
+  max-width: 14ch;
+  margin-top: 12px;
+  font: 600 clamp(38px, 4.8vw, 64px) / 0.96 var(--fonte-placa);
+  letter-spacing: -0.012em;
+}
+
+.acesso__texto {
+  max-width: 44ch;
+  font-size: 18px;
+  color: var(--tinta-2);
+}
+
+.acesso__fluxo {
+  margin: 12px 0 0;
+}
+
+.acesso__fluxo ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 0;
+  margin-top: 16px;
+}
+
+.acesso__fluxo li {
+  display: flex;
+  align-items: center;
+}
+
+/* Setas entre as etapas: a ordem aqui é a ordem real do pedido */
+.acesso__fluxo li + li::before {
+  content: '';
+  width: 34px;
+  height: 2px;
+  margin: 0 14px;
+  background: linear-gradient(90deg, var(--linha-forte) 60%, transparent 0) 0 0 / 8px 2px repeat-x;
+}
+
+.acesso__painel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px clamp(24px, 5vw, 72px);
+  background: var(--folha);
+  border-left: 1px solid var(--linha);
+}
+
+.acesso__form {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.acesso__form-titulo {
+  margin-bottom: 6px;
+  font: 600 36px/1 var(--fonte-placa);
+}
+
+.acesso__enviar {
+  margin-top: 6px;
+  width: 100%;
+}
+
+.acesso__alternativa {
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.acesso__nota {
+  padding-top: 14px;
+  border-top: 1px solid var(--linha);
+  font-size: 13.5px;
+  color: var(--tinta-3);
+}
+
+@media (max-width: 900px) {
+  .acesso {
+    grid-template-columns: 1fr;
+  }
+
+  .acesso__apresentacao {
+    gap: 20px;
+    padding: 36px var(--gutter) 40px;
+  }
+
+  .acesso__painel {
+    align-items: flex-start;
+    padding: 36px var(--gutter) 56px;
+    border-left: 0;
+    border-top: 1px solid var(--linha);
+  }
+
+  .acesso__form {
+    max-width: none;
+  }
+}
+
+/* Páginas públicas com formulário longo (cadastro) */
+.publica__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: calc(var(--largura) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding: 20px var(--gutter);
+  font-size: 15px;
+}
+
+.publica__topo a:first-child {
+  display: inline-flex;
+}

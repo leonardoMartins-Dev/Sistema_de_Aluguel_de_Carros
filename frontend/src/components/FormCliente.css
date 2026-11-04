@@ -1,0 +1,88 @@
+.form-cliente {
+  display: grid;
+  gap: 0;
+  padding: 32px;
+  background: var(--folha);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-folha);
+}
+
+.form-cliente > .aviso {
+  margin-bottom: 24px;
+}
+
+.form-cliente fieldset {
+  margin: 0;
+  min-width: 0;
+  border: 0;
+  border-top: 1px solid var(--linha);
+}
+
+.form-cliente fieldset:first-of-type {
+  border-top: 0;
+}
+
+.rendimentos {
+  display: grid;
+  gap: 14px;
+}
+
+.rendimentos__lista {
+  display: grid;
+  gap: 12px;
+}
+
+.rendimentos__item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+}
+
+.rendimentos__remover {
+  margin-top: 18px;
+  font-size: 14.5px;
+  color: var(--c-reprovado);
+}
+
+.rendimentos__rodape {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+}
+
+.rendimentos__contagem {
+  font-size: 14.5px;
+  color: var(--tinta-2);
+}
+
+.form-cliente__envio {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 24px;
+  border-top: 1px solid var(--linha);
+}
+
+@media (max-width: 640px) {
+  .form-cliente {
+    padding: 20px 16px;
+  }
+
+  .rendimentos__item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--linha);
+  }
+
+  .rendimentos__remover {
+    margin-top: 0;
+    justify-self: start;
+  }
+
+  .form-cliente__envio .botao {
+    width: 100%;
+  }
+}

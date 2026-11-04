@@ -1,0 +1,72 @@
+.frota {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* A placa faz o papel da foto do carro */
+.veiculo {
+  display: flex;
+  flex-direction: column;
+  background: var(--folha);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-folha);
+  overflow: hidden;
+}
+
+.veiculo__placa {
+  display: flex;
+  justify-content: center;
+  padding: 30px 16px 28px;
+  background: var(--papel);
+  border-bottom: 1px solid var(--linha);
+}
+
+.veiculo__info {
+  flex: 1;
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  padding: 16px 18px 6px;
+}
+
+.veiculo__modelo {
+  font: 600 25px/1.05 var(--fonte-placa);
+}
+
+.veiculo__detalhe {
+  font-size: 14.5px;
+  color: var(--tinta-2);
+}
+
+.veiculo__dono {
+  margin-top: 6px;
+  font-size: 13.5px;
+  color: var(--c-contratado);
+}
+
+.veiculo__acoes {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px 18px;
+}
+
+.veiculo__excluir {
+  font-size: 14.5px;
+  color: var(--c-reprovado);
+}
+
+.form-automovel {
+  display: grid;
+  gap: 16px;
+}
+
+.form-automovel__previa {
+  display: flex;
+  justify-content: center;
+  padding: 28px 16px;
+  border-radius: var(--raio);
+  background: var(--papel);
+}

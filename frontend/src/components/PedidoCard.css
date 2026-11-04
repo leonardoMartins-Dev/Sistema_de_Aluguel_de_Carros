@@ -1,0 +1,166 @@
+.lista-canhotos {
+  display: grid;
+  gap: 16px;
+}
+
+.canhoto {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'corpo carimbo'
+    'rodape rodape';
+  background: var(--folha);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-folha);
+}
+
+.canhoto__corpo {
+  grid-area: corpo;
+  display: grid;
+  gap: 16px;
+  padding: 20px 24px 22px;
+}
+
+.canhoto__topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 14px;
+}
+
+.canhoto__protocolo {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.canhoto__protocolo .dado {
+  font-weight: 500;
+  color: var(--tinta);
+}
+
+.canhoto__criado {
+  font-size: 13.5px;
+  color: var(--tinta-3);
+}
+
+.canhoto__carro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+}
+
+.canhoto__modelo {
+  font: 600 26px/1 var(--fonte-placa);
+}
+
+.canhoto__ano {
+  color: var(--tinta-3);
+}
+
+.canhoto__periodo,
+.canhoto__cliente {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 36px;
+}
+
+.canhoto__periodo dd,
+.canhoto__cliente dd {
+  margin-top: 2px;
+  font-size: 15.5px;
+}
+
+.canhoto__cliente {
+  padding: 12px 14px;
+  border-radius: 3px;
+  background: var(--papel);
+}
+
+.canhoto__profissao {
+  color: var(--tinta-2);
+}
+
+.canhoto__parecer {
+  margin: 0;
+  padding-left: 14px;
+  border-left: 3px solid var(--linha-forte);
+}
+
+.canhoto__parecer blockquote {
+  margin: 4px 0 0;
+  font-size: 15.5px;
+}
+
+.canhoto__carimbo {
+  grid-area: carimbo;
+  padding: 26px 28px 0 8px;
+}
+
+/* Linha picotada com os dois "furos" do canhoto */
+.canhoto__rodape {
+  grid-area: rodape;
+  position: relative;
+  display: grid;
+  gap: 14px;
+  padding: 16px 24px 18px;
+  border-top: 2px dashed var(--linha);
+}
+
+.canhoto__rodape::before,
+.canhoto__rodape::after {
+  content: '';
+  position: absolute;
+  top: -9px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--linha);
+  border-radius: 50%;
+  background: var(--papel);
+}
+
+.canhoto__rodape::before {
+  left: -9px;
+  clip-path: inset(0 0 0 50%);
+}
+
+.canhoto__rodape::after {
+  right: -9px;
+  clip-path: inset(0 50% 0 0);
+}
+
+.canhoto__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+}
+
+.canhoto__passo {
+  font-size: 14.5px;
+  color: var(--tinta-2);
+}
+
+@media (max-width: 640px) {
+  .canhoto {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'carimbo'
+      'corpo'
+      'rodape';
+  }
+
+  .canhoto__carimbo {
+    padding: 20px 20px 0;
+  }
+
+  .canhoto__corpo {
+    padding: 16px 20px 20px;
+  }
+
+  .canhoto__rodape {
+    padding: 14px 20px 16px;
+  }
+}

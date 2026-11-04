@@ -1,0 +1,77 @@
+.dialogo {
+  width: min(480px, calc(100vw - 32px));
+  max-height: calc(100svh - 48px);
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: var(--folha);
+  color: var(--tinta);
+  box-shadow: 0 24px 60px rgba(20, 28, 46, 0.3);
+}
+
+.dialogo--largo {
+  width: min(640px, calc(100vw - 32px));
+}
+
+.dialogo::backdrop {
+  background: rgba(20, 28, 46, 0.45);
+}
+
+.dialogo[open] {
+  animation: dialogo-abre 160ms ease-out;
+}
+
+@keyframes dialogo-abre {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.dialogo__cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px 0;
+}
+
+.dialogo__titulo {
+  font: 600 28px/1.05 var(--fonte-placa);
+}
+
+.dialogo__fechar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  margin: -6px -8px 0 0;
+  border: 0;
+  border-radius: var(--raio);
+  background: none;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--tinta-2);
+  cursor: pointer;
+}
+
+.dialogo__fechar:hover {
+  background: var(--papel);
+}
+
+.dialogo__corpo {
+  display: grid;
+  gap: 16px;
+  padding: 16px 24px 24px;
+}
+
+.dialogo__corpo > p {
+  color: var(--tinta-2);
+}
+
+.dialogo__rodape {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
