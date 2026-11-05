@@ -16,7 +16,9 @@
     </td>
     <td>
       <div>
-        <img src="imgs/logo.png" alt="Logo do projeto: placa Mercosul escrita ALUGUEL" width="200px"/>
+        <a href="https://sistema-de-aluguel-de-carros-ecru.vercel.app/login">
+          <img src="imgs/logo.png" alt="Logo do projeto: placa Mercosul escrita ALUGUEL" width="200px"/>
+        </a>
       </div>
     </td>
   </tr>
