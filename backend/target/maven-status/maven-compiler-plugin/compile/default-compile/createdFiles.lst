@@ -15,6 +15,7 @@ br/pucminas/aluguelcarros/dto/contrato/ContratoCreditoResponse.class
 br/pucminas/aluguelcarros/dto/contrato/ContratoResponse.class
 br/pucminas/aluguelcarros/repository/PedidoAluguelRepository.class
 br/pucminas/aluguelcarros/service/ClienteService.class
+HealthController.class
 br/pucminas/aluguelcarros/exception/GlobalExceptionHandler.class
 br/pucminas/aluguelcarros/model/Banco.class
 br/pucminas/aluguelcarros/dto/automovel/AutomovelResponse.class
@@ -52,7 +53,6 @@ br/pucminas/aluguelcarros/dto/auth/LoginRequest.class
 br/pucminas/aluguelcarros/repository/ContratoRepository.class
 br/pucminas/aluguelcarros/security/UsuarioAutenticado.class
 br/pucminas/aluguelcarros/model/Rendimento.class
-br/pucminas/aluguelcarros/model/Usuário.class
 br/pucminas/aluguelcarros/controller/AutomovelController.class
 br/pucminas/aluguelcarros/exception/ErroResponse.class
 br/pucminas/aluguelcarros/repository/ClienteRepository.class
