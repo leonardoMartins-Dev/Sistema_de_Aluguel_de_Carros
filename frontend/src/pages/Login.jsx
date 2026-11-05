@@ -5,6 +5,7 @@ import Carimbo from '../components/Carimbo'
 import Placa from '../components/Placa'
 import { useAuth } from '../context/useAuth'
 import { rotaInicial } from '../utils/formato'
+import StatusBackend from '../components/StatusBackend'
 import './Acesso.css'
 
 export default function Login() {
@@ -61,6 +62,8 @@ export default function Login() {
 
       <section className="acesso__painel">
         <form className="acesso__form" onSubmit={enviar} noValidate>
+          <StatusBackend />
+          
           <h2 className="acesso__form-titulo">Entrar</h2>
           {location.state?.aviso && <p className="aviso aviso--info">{location.state.aviso}</p>}
           {erro && (

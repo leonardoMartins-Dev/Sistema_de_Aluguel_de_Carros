@@ -5,6 +5,7 @@
 /Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/controller/AutomovelController.java
 /Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/controller/ClienteController.java
 /Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/controller/ContratoController.java
+/Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/controller/HealthController.java
 /Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/controller/PedidoAluguelController.java
 /Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/dto/auth/LoginRequest.java
 /Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/dto/auth/LoginResponse.java
@@ -37,7 +38,6 @@
 /Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/model/PedidoAluguel.java
 /Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/model/Rendimento.java
 /Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/model/Usuario.java
-/Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/model/Usuário.java
 /Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/model/enums/Perfil.java
 /Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/model/enums/StatusPedido.java
 /Users/leonardomartinsmacedo/Desktop/Sistema_de_Aluguel_de_Carros/backend/src/main/java/br/pucminas/aluguelcarros/model/enums/TipoContrato.java

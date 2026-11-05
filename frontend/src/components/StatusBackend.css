@@ -1,0 +1,57 @@
+
+.status-backend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin-bottom: 18px;
+  transition: all 0.3s ease;
+}
+
+.status-backend__indicador {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-backend--online {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.status-backend--online .status-backend__indicador {
+  background: #16a34a;
+  box-shadow: 0 0 6px #16a34a80;
+}
+
+.status-backend--offline {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.status-backend--offline .status-backend__indicador {
+  background: #dc2626;
+}
+
+.status-backend--checking {
+  color: #a16207;
+  background: #fef3c7;
+}
+
+.status-backend--checking .status-backend__indicador {
+  background: #d97706;
+  animation: pulsar-status 1.2s infinite;
+}
+
+@keyframes pulsar-status {
+  50% {
+    opacity: 0.3;
+  }
+}
