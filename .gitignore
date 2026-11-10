@@ -1,0 +1,44 @@
+# ===== Variáveis de ambiente / segredos =====
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ===== Backend (Java / Maven / Spring) =====
+backend/target/
+target/
+*.class
+*.jar
+*.war
+*.log
+hs_err_pid*
+.mvn/wrapper/maven-wrapper.jar
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# ===== Frontend (Node / Vite) =====
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.vercel
+
+# ===== IDEs / editores =====
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+.classpath
+.project
+.settings/
+.factorypath
+*.swp
+*.sw?
+
+# ===== Sistema operacional =====
+.DS_Store
+Thumbs.db
